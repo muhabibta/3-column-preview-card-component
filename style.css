@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+:root {
+  /* ### Primary */
+
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* ### Neutral */
+
+  --Transparent-white: hsla(0, 0%, 100%, 0.75); /* (paragraphs)*/
+  --Very-light-gray: hsl(0, 0%, 95%); /* (background, headings, buttons)*/
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: grid;
+  place-content: center;
+}
+.content {
+  margin: 10% 15%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "sedans suvs luxury";
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0px 50px 40px;
+  max-width: 380px;
+  box-sizing: border-box;
+}
+.icon {
+  display: block;
+  height: 2em;
+  width: auto;
+  margin-bottom: 30px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.icon:hover {
+  transform: translateX(100px);
+}
+.title {
+  text-transform: uppercase;
+  font-family: "Big Shoulders Display", cursive;
+  color: var(--Very-light-gray);
+  margin-bottom: 20px;
+}
+.text {
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--Transparent-white);
+  font-size: 13px;
+  line-height: 20px;
+  padding-right: 50px;
+  margin-bottom: 70px;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: var(--Very-light-gray);
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 12px;
+  transition: 0.25s;
+}
+.btn:hover {
+  position: absolute;
+  background: transparent;
+  border: 1px solid #fff;
+  color: var(--Very-light-gray) !important;
+  transform: translateY(-10px);
+  letter-spacing: 1px;
+}
+.sedans {
+  grid-area: sedans;
+  background: var(--Bright-orange);
+}
+.suvs {
+  grid-area: suvs;
+  background: var(--Dark-cyan);
+}
+.luxury {
+  grid-area: luxury;
+  background: var(--Very-dark-cyan);
+}
+.sedans .btn {
+  color: var(--Bright-orange);
+}
+.suvs .btn {
+  color: var(--Dark-cyan);
+}
+.luxury .btn {
+  color: var(--Very-dark-cyan);
+}
+.attribution {
+  padding-top: 5px;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  text-decoration: none;
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 10px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn:hover {
+    position: relative;
+  }
+}
